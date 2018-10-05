@@ -8,8 +8,11 @@ import registerServiceWorker from "./registerServiceWorker";
 import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap’s ready-to-use css
 import "bootstrap"; //Import Bootstrap’s JavaScript by adding this line
 import configureStore from "./store/configureStore";
+import { loadCourses } from "./actions/courseActions";
+/* This is the file with our application entry point */
 
-const store = configureStore();
+const store = configureStore(); // once the store is configured we can then dispatch actions in the store.
+store.dispatch(loadCourses());
 
 ReactDOM.render(
   <Provider store={store}>

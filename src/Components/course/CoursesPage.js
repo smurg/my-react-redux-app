@@ -2,26 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as courseActions from '../../actions/courseActions';
-
+import CourseList from './CourseList';
+/*
+ This should be a container component
+ it's connected to redux, and does not handle much jsx/template code
+ */
 class CoursesPage extends Component { 
   constructor(props, context) {
     super(props, context);
-
-    this.state = {
-      course: { title: '' }
-    };
-    this.onTitleChange = this.onTitleChange.bind(this);
-    this.onClickSave = this.onClickSave.bind(this);
-  }
-
-  onTitleChange(event) {
-    const course = this.state.course;
-    course.title = event.target.value;
-    this.setState({ course: course });
-  }
-
-  onClickSave() {
-   this.props.saveTitle(this.state.course);
   }
 
   courseRow(course, index) {
@@ -30,18 +18,11 @@ class CoursesPage extends Component {
   }
 
   render() {
+    const {courses} = this.props;
     return (
-      <div className='jumbotron'>
+      <div className='jumbotron bg-light'>
         <h1>Courses</h1>
-        {this.props.courses.map(this.courseRow)}
-        <h2>Add Course</h2>
-        <input type="text"
-            onChange={this.onTitleChange}
-            value={this.state.course.title} />
-
-        <input type="submit"
-          onClick={this.onClickSave}
-          value='Save' />
+        <CourseList courses={courses} />
       </div>
     );
   }

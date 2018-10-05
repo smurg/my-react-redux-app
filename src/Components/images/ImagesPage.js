@@ -37,7 +37,7 @@ class ImagesPage extends Component {
 
   render() {
     return (
-      <div className='jumbotron'>
+      <div className='jumbotron bg-light'>
         <h1> Images List - image page</h1>
         <p>Here we will display a list of images doing an async fetch to an external api and wait for it results.</p>
         <div className="container-fluid">
