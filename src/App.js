@@ -6,6 +6,7 @@ import AboutPage from './Components/about/AboutPage';
 import { Switch, Route } from 'react-router-dom';
 import Navbar from './Components/nav/Navbar';
 import CoursesPage from './Components/course/CoursesPage';
+import ManageCoursePage from './Components/course/ManageCoursePage';
 
 // this app will handle the template wrapping all pages!
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
             <Route path='/about' component={AboutPage}></Route>
             <Route path='/images' component={ImagesPage}></Route>
             <Route path='/courses' component={CoursesPage}></Route>
+            <Route path='/course/:id' component={ManageCoursePage}></Route>
           </Switch>
         </div>
       </div>
