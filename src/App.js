@@ -5,6 +5,7 @@ import HomePage from './Components/home/HomePage';
 import AboutPage from './Components/about/AboutPage';
 import { Switch, Route } from 'react-router-dom';
 import Navbar from './Components/nav/Navbar';
+import CoursesPage from './Components/course/CoursesPage';
 
 // this app will handle the template wrapping all pages!
 class App extends Component {
@@ -18,13 +19,14 @@ class App extends Component {
       <div className="container-fluid">
         <header className="App-header">
           <h1 className="App-title">Welcome to React App</h1>
-          <Navbar></Navbar>
+          <Navbar/>
         </header>
         <div className="main">
           <Switch>
             <Route exact path='/'component={HomePage}></Route>
             <Route path='/about' component={AboutPage}></Route>
             <Route path='/images' component={ImagesPage}></Route>
+            <Route path='/courses' component={CoursesPage}></Route>
           </Switch>
         </div>
       </div>
