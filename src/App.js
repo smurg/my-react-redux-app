@@ -22,7 +22,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React App</h1>
           <Navbar/>
         </header>
-        <div className="main">
+        <div className="main container">
           <Switch>
             <Route exact path='/'component={HomePage}></Route>
             <Route path='/about' component={AboutPage}></Route>
