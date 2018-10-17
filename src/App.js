@@ -27,8 +27,8 @@ class App extends Component {
             <Route exact path='/'component={HomePage}></Route>
             <Route path='/about' component={AboutPage}></Route>
             <Route path='/images' component={ImagesPage}></Route>
+            <Route path='/course/:id' component={ManageCoursePage} strict={false}></Route>
             <Route path='/courses' component={CoursesPage}></Route>
-            <Route path='/course/:id' component={ManageCoursePage}></Route>
           </Switch>
         </div>
       </div>
