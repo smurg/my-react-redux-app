@@ -9,8 +9,6 @@ import { Redirect } from 'react-router-dom';
 class ManageCoursePage extends Component {
   constructor(props, context) {
     super(props, context);
-    debugger;
-
     // we are going to set the inmutable state of this component. Here is the only place we can set it.
     this.state = {
       course: Object.assign({}, props.course),
