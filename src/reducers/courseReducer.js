@@ -2,7 +2,7 @@ import * as types from '../actions/actionTypes';
 import initialState from './initialState';
 
 export default function courseReducer(state = initialState.courses, action) {
-  // this reducer is only handling an array of courses. The state is a specifyc slice of the hole store.
+  // this reducer is only handling an array of courses. The state is a specific slice of the whole store.
   switch (action.type) {
     case types.CREATE_COURSE_SUCCESS:
     /* remember in Redux, state is inmutable. */
@@ -19,7 +19,7 @@ export default function courseReducer(state = initialState.courses, action) {
       ];
     case types.LOAD_COURSES_SUCCESS:
       return action.courses; // we need to replace whats in our state with what we get from API
-    default:
+    default: // initially redux will call this without action.type -> load initial state
       return state;
   }
 }

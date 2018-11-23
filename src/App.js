@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import ImagesPage from './Components/images/ImagesPage';
+import AlbumsPage from './Components/images/AlbumsPage';
 import HomePage from './Components/home/HomePage';
 import AboutPage from './Components/about/AboutPage';
 import { Switch, Route } from 'react-router-dom';
@@ -26,8 +26,9 @@ class App extends Component {
           <Switch>
             <Route exact path='/'component={HomePage}></Route>
             <Route path='/about' component={AboutPage}></Route>
-            <Route path='/images' component={ImagesPage}></Route>
-            <Route path='/course/:id' component={ManageCoursePage} strict={false}></Route>
+            <Route path='/albums' component={AlbumsPage}></Route>
+            <Route path='/course' component={ManageCoursePage}></Route>
+            <Route path='/course/:id' component={ManageCoursePage}></Route>
             <Route path='/courses' component={CoursesPage}></Route>
           </Switch>
         </div>

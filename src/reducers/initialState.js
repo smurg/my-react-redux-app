@@ -1,4 +1,11 @@
 export default {
   authors: [],
-  courses: []
+  courses: [],
+  images: {
+    data: null
+  },
+  albums: {
+    data: []
+  },
+  imagesByAlbum: {}
 };

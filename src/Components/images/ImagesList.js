@@ -1,27 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Image from './Image';
 
-/* class ImageList extends Component { 
-  render() {
-    return (
-      <div>
-        <h3> Image List!!! </h3>
-        <ul className="Projects">
+const ImagesList = ({ images }) => {
+  return (
+    <div className='jumbotron col-8'>
+      {!images ? 
+        <h4 className='display-4'> Select an album to see images </h4>
+      :
+        <ul className="row">
+          {images.map(img =>
+            <Image key={img.id} image={img} />
+          )}
         </ul>
-      </div>
-    );
-  }
-} */
-const ImagesList = () => (
-  <div>
-    <h3> Image List!!! </h3>
-    <ul className="Projects">
-    </ul>
-  </div>
-)
+      }
+    </div>
+  );
+};
 
 ImagesList.propTypes = {
-  ImageList: PropTypes.array
+  images: PropTypes.array
 }
 /*
   propTypes is a data types checking for the props we receive on this component.

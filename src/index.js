@@ -12,7 +12,8 @@ import { loadCourses } from "./actions/courseActions";
 import { loadAuthors } from "./actions/authorActions";
 /* This is the file with our application entry point */
 
-const store = configureStore(); // once the store is configured we can then dispatch actions in the store.
+const store = configureStore(); // we can send initialState on server-side rendered apps
+// once the store is configured we can then dispatch actions in the store.
 store.dispatch(loadCourses());
 store.dispatch(loadAuthors());
 
