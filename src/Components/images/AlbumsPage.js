@@ -3,7 +3,7 @@ import ImageContentLoader from './ImageContentLoader';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import { loadAlbums } from '../../actions/ImageActions';
-import AlbumsList from './AlbumsList';
+import List from '../common/List';
 import ImagesContainer from './ImagesContainer';
 
 // this component will handle the wrapper of the images page
@@ -28,7 +28,11 @@ class AlbumsPage extends Component {
             <ImageContentLoader />
           ) : (
             <React.Fragment>
-              <AlbumsList albums={albums} matchedUrl={matchedUrl} />
+              <List>
+                {albums.map(album => 
+                  <AlbumsLink key={album.id} albumId={album.id} albumTitle={album.title} matchedUrl={matchedUrl} />
+                )}
+              </List>
               <Route path='/albums/' component={ImagesContainer} exact></Route>
               <Route path='/albums/:id' component={ImagesContainer}></Route>
             </React.Fragment>
